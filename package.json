@@ -2,7 +2,7 @@
   "name": "universityProject",
   "private": true,
   "version": "0.0.1",
-  "description": "a Sails application",
+  "description": "Project to help student reach up the resources and informations",
   "keywords": [],
   "dependencies": {
     "bcrypt": "^0.8.6",
