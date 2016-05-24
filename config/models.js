@@ -27,6 +27,21 @@ module.exports.models = {
   * See http://sailsjs.org/#!/documentation/concepts/ORM/model-settings.html  *
   *                                                                          *
   ***************************************************************************/
-  // migrate: 'alter'
+  migrate: 'alter',
+  attributes: {
+    createdAt: {
+      type: 'datetime',
+      required: true
+    },
+    createdBy: {
+      type: 'string'
+    },
+    modifiedAt: {
+      type: 'datetime'
+    },
+    modifiedBy: {
+      type: 'string'
+    }
+  }
 
 };

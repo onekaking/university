@@ -1,10 +1,11 @@
 {
   "name": "universityProject",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "a Sails application",
   "keywords": [],
   "dependencies": {
+    "bcrypt": "^0.8.6",
     "ejs": "~0.8.4",
     "grunt": "0.4.2",
     "grunt-contrib-clean": "~0.5.0",
@@ -32,6 +33,6 @@
     "type": "git",
     "url": "git://github.com/anonymous node/sails user/universityProject.git"
   },
-  "author": "anonymous node/sails user",
+  "author": "thienhoang",
   "license": ""
 }
