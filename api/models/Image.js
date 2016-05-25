@@ -6,9 +6,27 @@
  */
 
 module.exports = {
-
-  attributes: {
-
-  }
+	attributes: {
+		url: {
+			type: 'string',
+			required: true
+		},
+		objectType: {
+			type: 'string',
+			required: true
+		},
+		objectId: {
+			type: 'string',
+			required: true
+		},
+		createdAt: {
+			type: 'datetime',
+			required: true
+		},
+		modifiedAt: {
+			type: 'datetime',
+			required: true
+		}
+	}
 };
 
