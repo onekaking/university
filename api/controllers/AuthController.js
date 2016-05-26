@@ -1,11 +1,14 @@
-var passport = require('passport');
+var passport = require('passport'),
+    MobileDetect = require('mobile-detect');
+
 module.exports = {
  
     login: function (req, res) {
         res.view();
     },
 
-    process: function(req, res){
+    process: function(req, res){2
+        var self = this;
         passport.authenticate('local', function(err, user, info) {
             if ((err) || (!user)) {
                 return res.send({
@@ -15,7 +18,16 @@ module.exports = {
             }
             req.logIn(user, function(err) {
                 if (err) res.send(err);
-                console.log(req.session.passport.user);
+
+                var json = self.detectBrowser(req);
+                console.log(json);
+                Logging.create({
+                    user: user.id,
+                    browser: req.headers['user-agent']
+                }).exec(function(err){
+                    console.log(err);
+                });
+
                 return res.send({
                     message: 'login successful'
                 });
@@ -26,5 +38,33 @@ module.exports = {
     logout: function (req,res){
         req.logout();
         res.send('logout successful');
+    },
+
+    detectBrowser: function(request) {
+        var ua = request.headers['user-agent'],
+            $ = {};
+
+        if (/mobile/i.test(ua))
+            $.Mobile = true;
+
+        if (/like Mac OS X/.test(ua)) {
+            $.iOS = /CPU( iPhone)? OS ([0-9\._]+) like Mac OS X/.exec(ua)[2].replace(/_/g, '.');
+            $.iPhone = /iPhone/.test(ua);
+            $.iPad = /iPad/.test(ua);
+        }
+
+        if (/Android/.test(ua))
+            $.Android = /Android ([0-9\.]+)[\);]/.exec(ua)[1];
+
+        if (/webOS\//.test(ua))
+            $.webOS = /webOS\/([0-9\.]+)[\);]/.exec(ua)[1];
+
+        if (/(Intel|PPC) Mac OS X/.test(ua))
+            $.Mac = /(Intel|PPC) Mac OS X ?([0-9\._]*)[\)\;]/.exec(ua)[2].replace(/_/g, '.') || true;
+
+        if (/Windows NT/.test(ua))
+            $.Windows = /Windows NT ([0-9\._]+)[\);]/.exec(ua)[1];
+
+        return $;
     }
 };

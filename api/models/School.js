@@ -1,5 +1,5 @@
 /**
- * Log.js
+ * School.js
  *
  * @description :: TODO: You might write a short summary of how this model works and what it represents here.
  * @docs        :: http://sailsjs.org/documentation/concepts/models-and-orm/models
@@ -7,17 +7,26 @@
 
 module.exports = {
 	attributes: {
-		objectType: {
-			type: 'string',
-			enum: ['CreateUser'],
-			required: true
-		},
-		objectId: {
+		name: {
 			type: 'string',
 			required: true
 		},
-		message: {
+		address: {
 			type: 'string'
+		},
+		avatar: {
+			model: 'image'
+		},
+		createdAt: {
+			type: 'datetime',
+			required: true
+		},
+		modifiedAt: {
+			type: 'datetime',
+			required: true
+		},
+		createdBy: {
+			model: 'user'
 		}
 	}
 };

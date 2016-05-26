@@ -13,19 +13,15 @@ module.exports = {
 		},
 		objectType: {
 			type: 'string',
-			required: true
+			required: true,
+			enum: ['UserAvatar']
 		},
 		objectId: {
 			type: 'string',
 			required: true
 		},
-		createdAt: {
-			type: 'datetime',
-			required: true
-		},
-		modifiedAt: {
-			type: 'datetime',
-			required: true
+		createdBy: {
+			model: 'user'
 		}
 	}
 };

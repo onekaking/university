@@ -40,8 +40,9 @@ module.exports = {
 
 	afterCreate: function(user, cb) {
 		Log.create({
-
-		})
+			objectType: 'CreateUser',
+			objectId: user.id
+		}).exec();
 	}
 };
 
