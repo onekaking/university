@@ -7,7 +7,7 @@ module.exports = {
         res.view();
     },
 
-    process: function(req, res){2
+    process: function(req, res){
         var self = this;
         passport.authenticate('local', function(err, user, info) {
             if ((err) || (!user)) {
