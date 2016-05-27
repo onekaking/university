@@ -32,9 +32,7 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-    '/': {
-        view: 'homepage'
-    },
+    'GET /': 'IndexController.index', 
 
   /***************************************************************************
   *                                                                          *
@@ -45,9 +43,9 @@ module.exports.routes = {
   * for configuration options and examples.                                  *
   *                                                                          *
   ***************************************************************************/
-
     'GET /login': {
-        view: 'login'
+        controller: 'AuthController',
+        action: 'login'
     },
 
     'POST /login': {

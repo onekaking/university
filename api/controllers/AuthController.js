@@ -4,7 +4,11 @@ var passport = require('passport'),
 module.exports = {
  
     login: function (req, res) {
-        res.view();
+        if(req.session.passport && req.session.passport.user) {
+            res.view('homepage');
+        } else {
+            res.view('login');
+        }
     },
 
     process: function(req, res){
@@ -24,10 +28,8 @@ module.exports = {
                 Logging.create({
                     user: user.id,
                     browser: req.headers['user-agent']
-                }).exec(function(err){
-                    console.log(err);
-                });
-
+                }).exec(function(err){});
+                console.log(req.session);
                 return res.send({
                     message: 'login successful'
                 });
