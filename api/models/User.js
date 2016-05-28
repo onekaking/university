@@ -11,8 +11,7 @@ module.exports = {
 	attributes: {
 		username: {
 			type: 'string',
-			required: true,
-			unique: true
+			required: true
 		},
 		password: {
 			type: 'string',
@@ -40,9 +39,9 @@ module.exports = {
 
 	afterCreate: function(user, cb) {
 		Log.create({
-			objectType: 'CreateUser',
+			type: 'CreateUser',
 			objectId: user.id
-		}).exec();
+		}).exec(function() {});
 	}
 };
 
