@@ -7,7 +7,7 @@
 
 module.exports = {
 	attributes: {
-		type: {
+		objectType: {
 			type: 'string',
 			enum: ['CreateUser'],
 			required: true
