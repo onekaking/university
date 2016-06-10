@@ -39,6 +39,15 @@ module.exports.routes = {
       }
     }, 
 
+    'GET /admin': {
+      view: 'index',
+      locals: {
+        layout: false
+      }
+      // controller: 'IndexController',
+      // action: 'admin'
+    }, 
+
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *

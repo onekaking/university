@@ -41,7 +41,9 @@ module.exports = {
 		Log.create({
 			objectType: 'CreateUser',
 			objectId: user.id
-		}).exec();
+		}).exec(function(err){
+			cb(null,user);
+		});
 	}
 };
 

@@ -22,9 +22,12 @@ module.exports = function(grunt) {
 				appRoot: '.tmp/public'
 			},
 			files: {
-				'.tmp/public/**/*.html': require('../pipeline').jsFilesToInject,
-				'views/**/*.html': require('../pipeline').jsFilesToInject,
-				'views/**/*.ejs': require('../pipeline').jsFilesToInject
+				'.tmp/public/**/*.html': ['.tmp/public/es6/bundle.js', '.tmp/public/js/dependencies/sails.io.js'],
+				'views/**/*.html': ['.tmp/public/es6/bundle.js', '.tmp/public/js/dependencies/sails.io.js'],
+				'views/**/*.ejs': ['.tmp/public/es6/bundle.js', '.tmp/public/js/dependencies/sails.io.js']
+				// '.tmp/public/**/*.html': require('../pipeline').jsFilesToInject,
+				// 'views/**/*.html': require('../pipeline').jsFilesToInject,
+				// 'views/**/*.ejs': require('../pipeline').jsFilesToInject
 			}
 		},
 
