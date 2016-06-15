@@ -1,6 +1,5 @@
 var passport = require('passport'),
-  LocalStrategy = require('passport-local').Strategy,
-  bcrypt = require('bcrypt');
+  LocalStrategy = require('passport-local').Strategy;
 //helper functions
 function findById(id, fn) {
   User.findOne(id).exec(function (err, user) {

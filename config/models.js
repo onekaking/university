@@ -17,7 +17,7 @@ module.exports.models = {
   * connections (see `config/connections.js`)                                *
   *                                                                          *
   ***************************************************************************/
-  connection: 'someMongodbServer',
+  // connection: 'localDiskDb',
 
   /***************************************************************************
   *                                                                          *
@@ -28,5 +28,20 @@ module.exports.models = {
   *                                                                          *
   ***************************************************************************/
   migrate: 'alter',
+  attributes: {
+    createdAt: {
+      type: 'datetime',
+      required: true
+    },
+    createdBy: {
+      type: 'string'
+    },
+    modifiedAt: {
+      type: 'datetime'
+    },
+    modifiedBy: {
+      type: 'string'
+    }
+  }
 
 };

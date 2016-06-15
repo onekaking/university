@@ -32,13 +32,21 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-    'GET /': 'IndexController.index',
+    'GET /': {
+      view: 'homepage',
+      locals: {
+        layout: 'layout'
+      }
+    }, 
+
     'GET /admin': {
-        view: 'homepage',
-        locals: {
-            layout: 'layout'
-        }
-    },
+      view: 'index',
+      locals: {
+        layout: false
+      }
+      // controller: 'IndexController',
+      // action: 'admin'
+    }, 
 
   /***************************************************************************
   *                                                                          *

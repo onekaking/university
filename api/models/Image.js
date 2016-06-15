@@ -11,10 +11,10 @@ module.exports = {
 			type: 'string',
 			required: true
 		},
-		type: {
+		objectType: {
 			type: 'string',
 			required: true,
-			enum: ['UserAvatar', 'SchoolAvatar', 'SchoolArticle']
+			enum: ['UserAvatar']
 		},
 		objectId: {
 			type: 'string',
