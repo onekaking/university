@@ -1,11 +1,11 @@
 /**
  * Allow any authenticated user.
  */
-module.exports = function (req, res, ok) {
+module.exports = function (req, res, next) {
 
   // User is allowed, proceed to controller
   var is_auth = req.isAuthenticated()
-  if (is_auth) return ok();
+  if (is_auth) res.redirect("/");
   // User is not allowed
-  else return res.redirect("/login");
+  else next();
 };

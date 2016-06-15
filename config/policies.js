@@ -49,7 +49,12 @@ module.exports.policies = {
 		// feed : ['isNiceToAnimals', 'hasRabbitFood']
 	// }
     IndexController: {
-        '*': false,
+        '*': true,
         'index': 'authenticated'
+    },
+    AuthController: {
+        '*': true,
+        'register': 'isLogged',
+        'process': 'isLogged'
     }
 };

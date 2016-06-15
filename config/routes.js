@@ -32,7 +32,13 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-    'GET /': 'IndexController.index', 
+    'GET /': 'IndexController.index',
+    'GET /admin': {
+        view: 'homepage',
+        locals: {
+            layout: 'layout'
+        }
+    },
 
   /***************************************************************************
   *                                                                          *
@@ -46,6 +52,16 @@ module.exports.routes = {
     'GET /login': {
         controller: 'AuthController',
         action: 'login'
+    },
+
+    'GET /register': {
+        controller: 'AuthController',
+        action: 'register'
+    },
+
+    'POST /register': {
+        controller: 'AuthController',
+        action: 'createUser'
     },
 
     'POST /login': {

@@ -17,6 +17,10 @@ module.exports = {
 			type: 'string',
 			required: true
 		},
+		permissions: {
+			collection: 'permission',
+			via: 'users'
+		},
 		toJSON: function() {
 			var obj = this.toObject();
 			delete obj.password;
@@ -41,7 +45,9 @@ module.exports = {
 		Log.create({
 			type: 'CreateUser',
 			objectId: user.id
-		}).exec(function() {});
+		}).exec(function() {
+			cb(null, user);
+		});
 	}
 };
 

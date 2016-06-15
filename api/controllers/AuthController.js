@@ -1,10 +1,31 @@
 var passport = require('passport'),
-    MobileDetect = require('mobile-detect');
+    MobileDetect = require('mobile-detect'),
+    bcrypt = require('bcrypt');
 
 module.exports = {
  
     login: function (req, res) {
-        res.view('login');
+        if(!req.session.passport) {
+            res.view('login', { layout: false });
+        } else if(req.session.passport.user) {
+            res.redirect('/');
+        }
+    },
+
+    register: function (req, res) {
+        res.view('register');
+    },
+
+    createUser: function (req, res) {
+        User.create({
+            username: req.param('username'),
+            password: req.param('password')
+        }).exec(function createCB(err, created){
+            if (err) throw(err);
+            console.log('Created user with name ' + created.username);
+
+            res.redirect('/');
+        });
     },
 
     process: function(req, res){
@@ -22,9 +43,7 @@ module.exports = {
                     user: user.id,
                     browser: req.headers['user-agent']
                 }).exec(function(err){});
-                return res.send({
-                    message: 'login successful'
-                });
+                res.redirect('/');
             });
         })(req, res);
     },

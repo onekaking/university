@@ -1,0 +1,39 @@
+body {
+	background-color: #f2f4f8;
+}
+
+.pusher {
+	width: calc(~"100% - 260px");
+	display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+* {
+	&:before, &:after {
+		box-sizing: border-box;
+	}
+}
+
+.content-container {
+	display: flex;
+	.left-col {
+		flex: 1;
+	}
+	.right-col {
+		width: 200px;
+
+	}
+}
+
+.header , .right-col {
+	background-color: white;
+}
+
+.header {
+	margin-bottom: 2px;
+}
+
+.ui.vertical.menu {
+	background-color: #1c2b36;
+}

@@ -27,6 +27,10 @@ module.exports = function(grunt) {
 
 			// When assets are changed:
 			tasks: ['syncAssets' , 'linkAssets']
+		},
+		js: {
+			files: ['assets/js/**/*.js'],
+			tasks: ['clean:js','copy:dev']
 		}
 	});
 
