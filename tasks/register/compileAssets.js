@@ -3,7 +3,6 @@ module.exports = function (grunt) {
 		'clean:dev',
 		'jst:dev',
 		'less:dev',
-    'browserify:dev',
 		'copy:dev',
 		'coffee:dev'
 	]);

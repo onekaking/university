@@ -24,7 +24,8 @@
     "passport-local": "^1.0.0",
     "rc": "~0.5.0",
     "sails": "~0.11.0",
-    "sails-disk": "~0.10.0"
+    "sails-disk": "~0.10.0",
+    "sailsjs-cacheman": "^0.1.4"
   },
   "scripts": {
     "debug": "node debug app.js",
@@ -36,12 +37,5 @@
     "url": "git://github.com/anonymous node/sails user/universityProject.git"
   },
   "author": "thienhoang",
-  "license": "",
-  "devDependencies": {
-    "babelify": "^6.1.0",
-    "grunt-browserify": "^3.8.0",
-    "react-dom": "^15.1.0",
-    "react-redux": "^4.4.5",
-    "redux": "^3.5.2"
-  }
+  "license": ""
 }

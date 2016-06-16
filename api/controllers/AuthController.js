@@ -1,6 +1,6 @@
 var passport = require('passport'),
-    MobileDetect = require('mobile-detect'),
-    bcrypt = require('bcrypt');
+    MobileDetect = require('mobile-detect');
+ //   bcrypt = require('bcrypt');
 
 module.exports = {
  
