@@ -17,14 +17,6 @@ module.exports = {
 		avatar: {
 			model: 'image'
 		},
-		createdAt: {
-			type: 'datetime',
-			required: true
-		},
-		modifiedAt: {
-			type: 'datetime',
-			required: true
-		},
 		createdBy: {
 			model: 'user'
 		}

@@ -48,13 +48,17 @@ module.exports.policies = {
 		// before letting any users feed our rabbits
 		// feed : ['isNiceToAnimals', 'hasRabbitFood']
 	// }
-    IndexController: {
-        '*': true,
-        'index': 'authenticated'
-    },
-    AuthController: {
-        '*': true,
-        'register': 'isLogged',
-        'process': 'isLogged'
-    }
+
+  // '*': 'authenticated',
+  
+  IndexController: {
+      '*': true,
+      'index': 'authenticated'
+  },
+
+  AuthController: {
+      '*': true,
+      'register': 'isLogged',
+      'process': 'isLogged'
+  }
 };

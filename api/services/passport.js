@@ -55,6 +55,11 @@ passport.use(new LocalStrategy(
             message: 'Unknown user ' + username
           });
         }
+        var returnUser = {
+          username: user.username,
+          createdAt: user.createdAt,
+          id: user.id
+        };
         return done(null, returnUser, {
           message: 'Logged In Successfully'
         });

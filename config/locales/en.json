@@ -1,4 +1,8 @@
 {
-	"Welcome": "Welcome",
-	"A brand new app.": "A brand new app."
+	"HomePage.SideBar.Task": "Task",
+	"HomePage.SideBar.Task.InputData": "Input Data",
+	"HomePage.SideBar.School": "School",
+	"HomePage.SideBar.School.University": "University",
+	"HomePage.SideBar.School.Baby": "Baby",
+	"HomePage.SideBar.School.EnglishSchool": "English School"
 }

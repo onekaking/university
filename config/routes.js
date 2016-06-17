@@ -32,21 +32,17 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-    'GET /': {
-      view: 'homepage',
-      locals: {
-        layout: 'layout'
-      }
-    }, 
+  'GET /': {
+    controller: 'IndexController',
+    action: 'index'
+  }, 
 
-    'GET /admin': {
-      view: 'index',
-      locals: {
-        layout: false
-      }
-      // controller: 'IndexController',
-      // action: 'admin'
-    }, 
+  'GET /admin': {
+    view: 'index',
+    locals: {
+      layout: false
+    }
+  }, 
 
   /***************************************************************************
   *                                                                          *
@@ -57,29 +53,44 @@ module.exports.routes = {
   * for configuration options and examples.                                  *
   *                                                                          *
   ***************************************************************************/
-    'GET /login': {
-        controller: 'AuthController',
-        action: 'login'
-    },
+  'GET /login': {
+    controller: 'AuthController',
+    action: 'login'
+  },
 
-    'GET /register': {
-        controller: 'AuthController',
-        action: 'register'
-    },
+  'GET /register': {
+    controller: 'AuthController',
+    action: 'register'
+  },
 
-    'POST /register': {
-        controller: 'AuthController',
-        action: 'createUser'
-    },
+  'POST /register': {
+    controller: 'AuthController',
+    action: 'createUser'
+  },
 
-    'POST /login': {
-        controller: 'AuthController',
-        action: 'process'
-    },
+  'POST /login': {
+    controller: 'AuthController',
+    action: 'process'
+  },
 
-    '/logout': {
-        controller: 'AuthController',
-        action: 'logout'
-    }
+  '/logout': {
+    controller: 'AuthController',
+    action: 'logout'
+  },
+
+    /***************************************************************************
+  *                                                                          *
+  * Custom routes here...                                                    *
+  *                                                                          *
+  * If a request to a URL doesn't match any of the custom routes above, it   *
+  * is matched against Sails route blueprints. See `config/blueprints.js`    *
+  * for configuration options and examples.                                  *
+  *                                                                          *
+  ***************************************************************************/
+  'GET /input': {
+    controller: 'IndexController',
+    action: 'input'
+  }
+
 
 };
