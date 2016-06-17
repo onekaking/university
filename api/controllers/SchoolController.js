@@ -6,6 +6,8 @@
  */
 
 module.exports = {
-	
+	indexView: function(req, res) {
+    return res.view('School');
+  }
 };
 

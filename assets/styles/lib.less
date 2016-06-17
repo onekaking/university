@@ -1,13 +1,51 @@
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
 .left_col {
   background: #2A3F54;
 }
-.nav-sm .container.body .col-md-3.left_col {
+.nav-sm .left_col {
   width: 70px;
   padding: 0;
   z-index: 9999;
-  position: absolute;
 }
-.nav-sm .container.body .col-md-3.left_col.menu_fixed {
+
+.main_container {
+  .left_col {
+    @media (min-width: 1200px) {
+      width: 230px;
+    }
+  }
+
+  .right-col {
+    width: 100%;
+    background: #F7F7F7;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .right_col {
+    padding: 10px 20px;
+    z-index: 2;
+    width: 100%;
+    flex: 1;
+  }
+
+  .nav-menu {
+    background: #EDEDED;
+    border-bottom: 1px solid #D9DEE4;
+    margin-bottom: 10px;
+    border-radius: 0;
+  }
+
+  footer {
+    border-top: 1px solid #D9DEE4;
+  }
+}
+
+.nav-sm .left_col.menu_fixed {
   position: fixed;
   height: 100%;
 }
@@ -18,11 +56,7 @@
 .nav-sm .hidden-small {
   visibility: hidden;
 }
-.nav-sm .container.body .right_col {
-  padding: 10px 20px;
-  margin-left: 70px;
-  z-index: 2;
-}
+
 .nav-sm .navbar.nav_title {
   width: 70px;
 }
@@ -38,15 +72,10 @@
   padding: 5px 6px;
   border-radius: 50%;
 }
-.nav-sm .main_container .top_nav {
-  display: block;
-  margin-left: 70px;
-  z-index: 2;
-}
+
 .nav-sm .nav.side-menu li a {
   text-align: center !important;
   font-weight: 400;
-  font-size: 10px;
   padding: 10px 5px;
 }
 .nav-sm .nav.child_menu li.active,
@@ -178,7 +207,6 @@
   float: left;
   background: #EDEDED;
   border-bottom: 1px solid #D9DEE4;
-  margin-bottom: 10px;
   width: 100%;
   position: relative;
 }
@@ -340,10 +368,6 @@ body {
   font-weight: 400;
   line-height: 1.471;
 }
-.main_container .top_nav {
-  display: block;
-  margin-left: 230px;
-}
 .main_container {}
 .no-padding {
   padding: 0 !important;
@@ -429,10 +453,7 @@ table.no-margin .progress {
   padding-right: 10px;
   padding-left: 10px;
 }
-.row {
-  margin-right: -10px;
-  margin-left: -10px;
-}
+
 .grid_slider .col-md-6 {
   padding: 0 40px;
 }
@@ -694,14 +715,7 @@ footer {
   padding: 15px 20px;
   display: block;
 }
-@media (min-width: 768px) {
-  footer {
-    margin-left: 230px;
-  }
-}
-.nav-sm footer {
-  margin-left: 70px ;  
-}
+
 .footer_fixed footer {
   position: fixed;
   left: 0px;
@@ -3483,13 +3497,7 @@ a.hiddenanchor {
   float: right;
   margin-left: 15px;
 }
-.clearfix:after, form:after {
-  content: ".";
-  display: block;
-  height: 0;
-  clear: both;
-  visibility: hidden;
-}
+
 .login_content {
   margin: 0 auto;
   padding: 25px 0 0;

@@ -11,6 +11,7 @@ angular.module('educationApp')
 	    $FOOTER = $('footer');
 
 	var setContentHeight = function () {
+        return;
         // reset height
         $RIGHT_COL.css('min-height', $(window).height());
 
@@ -60,7 +61,7 @@ angular.module('educationApp')
 
         $BODY.toggleClass('nav-md nav-sm');
 
-        setContentHeight();
+        //setContentHeight();
     });
 
     // check active menu
@@ -72,7 +73,7 @@ angular.module('educationApp')
         setContentHeight();
     }).parent().addClass('active');
 
-    setContentHeight();
+    //setContentHeight();
 
     // fixed sidebar
     if ($.fn.mCustomScrollbar) {

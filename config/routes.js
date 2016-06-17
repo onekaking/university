@@ -90,6 +90,11 @@ module.exports.routes = {
   'GET /input': {
     controller: 'IndexController',
     action: 'input'
+  },
+
+  'GET /schoolpage': {
+    controller: 'SchoolController',
+    action: 'indexView'
   }
 
 
